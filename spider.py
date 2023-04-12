@@ -15,7 +15,7 @@ def getpic():
     api_url = 'https://api.api-ninjas.com/v1/randomimage?category={}'.format(
         category)
     response = requests.get(api_url, headers={
-        'X-Api-Key': 'EVB8kDwkFMCu0zr4CNA1pg==dLdyF9ocKMfBsGA7',
+        'X-Api-Key': '',
         'Accept': 'image/jpg'},
                             stream=True)
     if response.status_code == requests.codes.ok:
