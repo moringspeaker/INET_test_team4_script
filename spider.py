@@ -10,12 +10,12 @@ import numpy as np
 
 def getpic():
     category = ''
-    width = 640
-    height = 480
+    width = np.random.randint(640, 1440)
+    height = np.random.randint(480, 1080)
     api_url = 'https://api.api-ninjas.com/v1/randomimage?category={}'.format(
         category)
     response = requests.get(api_url, headers={
-        'X-Api-Key': '',
+        'X-Api-Key': 'EVB8kDwkFMCu0zr4CNA1pg==dLdyF9ocKMfBsGA7',
         'Accept': 'image/jpg'},
                             stream=True)
     if response.status_code == requests.codes.ok:
@@ -76,9 +76,9 @@ def sendpic(img):
 
 if __name__ == "__main__":
     i = 0
-    while i < 200:
+    while i < 20:
         img=getpic()
-        while len(img) > 90000:
+        while len(img) > 150000:
             img = getpic()
         sendpic(img)
         time.sleep(np.random.uniform(1,5))
